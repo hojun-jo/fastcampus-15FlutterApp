@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:part3_shake_count_app/red_box.dart';
 import 'package:shake/shake.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -18,12 +20,12 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   void initState() {
     WidgetsBinding.instance.addObserver(this);
     detector = ShakeDetector.autoStart(
-        onPhoneShake: () {
-          setState(() {
-            _counter++;
-          });
-        },
-        shakeThresholdGravity: 1.5,
+      onPhoneShake: () {
+        setState(() {
+          _counter++;
+        });
+      },
+      shakeThresholdGravity: 1.5,
     );
     super.initState();
   }
@@ -51,8 +53,35 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              '흔들어서 카운트를 올려보세요.',
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const RedBox(),
+                Column(
+                  children: [
+                    const RedBox()
+                        .box
+                        .padding(EdgeInsets.all(30))
+                        .color(Colors.blue)
+                        .make(),
+                    '흔들어서 카운트를 올려보세요.'
+                        .text
+                        .size(20)
+                        .color(Colors.black)
+                        .bold
+                        .isIntrinsic
+                        .makeCentered()
+                        .box
+                        .rounded
+                        .color(Colors.green)
+                        .height(150)
+                        .make()
+                        .pSymmetric(h: 20, v: 50),
+                    const RedBox(),
+                  ],
+                ),
+                const RedBox(),
+              ],
             ),
             Text(
               '$_counter',
@@ -71,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    switch(state) {
+    switch (state) {
       case AppLifecycleState.detached:
         break;
       case AppLifecycleState.resumed:
