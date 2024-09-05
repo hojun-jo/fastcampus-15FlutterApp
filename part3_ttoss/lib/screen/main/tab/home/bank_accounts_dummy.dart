@@ -9,6 +9,9 @@ final bankAccountKakao = BankAccount(bankKakao, 7000000, accountTypeName: 'ìž…ì¶
 
 final List<BankAccount> bankAccounts = [
   bankAccountShinhan1,
+  bankAccountShinhan1,
+  bankAccountShinhan1,
+  bankAccountShinhan1,
   bankAccountShinhan2,
   bankAccountShinhan3,
   bankAccountToss,
