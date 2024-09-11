@@ -2,15 +2,20 @@ import 'package:fast_app_base/common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
-class Fire extends StatelessWidget {
+class Fire extends StatefulWidget {
   const Fire({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    late StateMachineController controller;
-    late SMIBool smiOn;
-    late SMIBool smiHover;
+  State<Fire> createState() => _FireState();
+}
 
+class _FireState extends State<Fire> {
+  late StateMachineController controller;
+  late SMIBool smiOn;
+  late SMIBool smiHover;
+
+  @override
+  Widget build(BuildContext context) {
     return RiveAnimation.asset(
       '$baseRivPath/fire_button.riv',
           stateMachines: const ['State Machine 1'],
