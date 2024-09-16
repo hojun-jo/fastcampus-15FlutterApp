@@ -3,7 +3,6 @@ import 'package:fast_app_base/common/theme/custom_theme_app.dart';
 import 'package:fast_app_base/screen/main/s_main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/instance_manager.dart';
 
 import 'common/theme/custom_theme.dart';
 
@@ -27,7 +26,6 @@ class AppState extends State<App> with Nav, WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-    Get.put(TodoDataHolder());
     WidgetsBinding.instance.addObserver(this);
   }
 
