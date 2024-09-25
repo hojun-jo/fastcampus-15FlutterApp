@@ -1,7 +1,7 @@
-import 'package:fast_app_base/app.dart';
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_daangn_button.riverpod.dart';
 import 'package:fast_app_base/screen/main/tab/home/w_product_post_item.dart';
+import 'package:fast_app_base/screen/notification/s_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -54,6 +54,16 @@ class _HomeFragmentState extends ConsumerState<HomeFragment> {
                 .toList(),
             child: Text(title),
           ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                Nav.push(NotificationScreen());
+              },
+              icon: const Icon(
+                Icons.notifications_none_rounded,
+              ),
+            ),
+          ],
         ),
         Expanded(
           child: ListView.separated(
