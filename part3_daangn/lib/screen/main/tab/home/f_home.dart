@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../common/widget/w_line.dart';
-import '../../../../entity/dummies.dart';
 import '../../fab/w_floating_daangn_button.dart';
 
 class HomeFragment extends ConsumerStatefulWidget {
