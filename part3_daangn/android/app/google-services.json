@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "732855262166",
+    "project_id": "fastcampus-flutter-daangn",
+    "storage_bucket": "fastcampus-flutter-daangn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732855262166:android:5da2a786299239720c2277",
+        "android_client_info": {
+          "package_name": "com.example.fast_app_base"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuu_Jrz4aXYTNOrUKM_drVq6s1q_fdjF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
