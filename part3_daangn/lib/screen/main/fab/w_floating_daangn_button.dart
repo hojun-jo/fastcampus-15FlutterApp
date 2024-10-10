@@ -1,5 +1,6 @@
 import 'package:fast_app_base/common/cli_common.dart';
 import 'package:fast_app_base/common/common.dart';
+import 'package:fast_app_base/common/language/language.dart';
 import 'package:fast_app_base/common/widget/animated_width_collapse.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_daangn_button.riverpod.dart';
 import 'package:fast_app_base/screen/main/s_main.dart';
@@ -50,7 +51,7 @@ class FloatingDaangnButton extends ConsumerWidget {
                       child: Column(
                         children: [
                           Container(
-                            width: 160,
+                            width: layerWidth,
                             padding: const EdgeInsets.all(15),
                             decoration: BoxDecoration(
                               color: context.appColors.floatingActionLayer,
@@ -61,11 +62,11 @@ class FloatingDaangnButton extends ConsumerWidget {
                               children: [
                                 Tap(onTap: (){
                                   context.go('/main/localLife');
-                                }, child: _floatItem('알바', '$basePath/fab/fab_01.png')),
-                                _floatItem('과외/클래스', '$basePath/fab/fab_02.png'),
-                                _floatItem('농수산물', '$basePath/fab/fab_03.png'),
-                                _floatItem('부동산', '$basePath/fab/fab_04.png'),
-                                _floatItem('중고차', '$basePath/fab/fab_05.png'),
+                                }, child: _floatItem('part_time', '$basePath/fab/fab_01.png')),
+                                _floatItem('lecture', '$basePath/fab/fab_02.png'),
+                                _floatItem('agriculture', '$basePath/fab/fab_03.png'),
+                                _floatItem('profit', '$basePath/fab/fab_04.png'),
+                                _floatItem('car', '$basePath/fab/fab_05.png'),
                               ],
                             ),
                           ),
@@ -75,7 +76,7 @@ class FloatingDaangnButton extends ConsumerWidget {
                               Nav.push(const WriteScreen());
                             },
                             child: Container(
-                              width: 160,
+                              width: layerWidth,
                               padding: const EdgeInsets.all(15),
                               margin: const EdgeInsets.only(bottom: 10),
                               decoration: BoxDecoration(
@@ -85,7 +86,7 @@ class FloatingDaangnButton extends ConsumerWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  _floatItem('내 물건 팔기', '$basePath/fab/fab_06.png'),
+                                  _floatItem('sell_my_thing', '$basePath/fab/fab_06.png'),
                                 ],
                               ),
                             ),
@@ -137,6 +138,8 @@ class FloatingDaangnButton extends ConsumerWidget {
     );
   }
 
+  double get layerWidth => currentLanguage == Language.english ? 200 : 160;
+
   _floatItem(String title, String imagePath) {
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -146,7 +149,7 @@ class FloatingDaangnButton extends ConsumerWidget {
           width: 30,
         ),
         const Width(8),
-        title.text.make(),
+        title.tr().text.make(),
       ],
     );
   }

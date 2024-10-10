@@ -28,10 +28,13 @@ class App extends ConsumerStatefulWidget {
   ConsumerState<App> createState() => AppState();
 }
 
-class AppState extends ConsumerState<App> with WidgetsBindingObserver {
+class AppState extends ConsumerState<App> with Nav, WidgetsBindingObserver {
   final ValueKey<String> _scaffoldKey = const ValueKey<String>('App scaffold');
 
   final _auth = DaangnAuth();
+
+  @override
+  GlobalKey<NavigatorState> get navigatorKey => App.navigatorKey;
 
   @override
   void initState() {
