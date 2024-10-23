@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -83,8 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   File file = File(result.files.single.path ?? "");
                   print(file.path);
                   try {
-                    await FirebaseStorage.instance.ref(
-                        "image/${DateTime.now().millisecondsSinceEpoch}.jpg")
+                    await FirebaseStorage.instance
+                        .ref(
+                            "image/${DateTime.now().millisecondsSinceEpoch}.jpg")
                         .putFile(file);
                   } on FirebaseException catch (e) {
                     print(e.toString());
@@ -93,6 +95,48 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text("팡리업로드"),
             ),
+            Divider(),
+            ElevatedButton(
+              onPressed: () async {
+                // await FirebaseFirestore.instance.collection("counter").add(
+                //   {
+                //     "value": 10,
+                //     "timestamp": Timestamp.now(),
+                //   },
+                // );
+
+                // await FirebaseFirestore.instance
+                //     .collection("test")
+                //     .doc("flutter")
+                //     .set({
+                //   "value": 10,
+                // });
+
+                // await FirebaseFirestore.instance
+                //     .collection("counter")
+                //     .doc("3xhF0MT9G5cHsm1LL6yF")
+                //     .update(
+                //   {
+                //     "value": 11,
+                //     "timestamp": Timestamp.now(),
+                //   },
+                // );
+
+                // await FirebaseFirestore.instance
+                //     .collection("counter")
+                //     .doc("3xhF0MT9G5cHsm1LL6yF")
+                //     .delete();
+              },
+              child: Text("데이터 쓰기"),
+            ),
+            ElevatedButton(onPressed: () async {
+              final snapshot = await FirebaseFirestore.instance
+                  .collection("test")
+                  .get();
+              for (var element in snapshot.docs) {
+                print(element.data());
+              }
+            }, child: Text("데이터 읽기"),),
           ],
         ),
       ),
