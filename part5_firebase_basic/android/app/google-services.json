@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "275752523351",
+    "firebase_url": "https://local-basic-test-1022-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "local-basic-test-1022",
+    "storage_bucket": "local-basic-test-1022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275752523351:android:64efa8a2aff346b284f512",
+        "android_client_info": {
+          "package_name": "com.example.part5_firebase_basic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHMAFWLIAUnPBV3vTKSWhFNqyfqwfUr0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
