@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:part5_fastcampus_market/home/widgets/home_widget.dart';
+import 'package:part5_fastcampus_market/home/widgets/seller_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,21 +26,20 @@ class _HomeScreenState extends State<HomeScreen> {
               Icons.logout,
             ),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
+          if (_menuIndex == 0)
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search,
+              ),
             ),
-          ),
         ],
       ),
       body: IndexedStack(
         index: _menuIndex,
         children: [
           HomeWidget(),
-          Container(
-            color: Colors.indigo,
-          ),
+          SellerWidget(),
         ],
       ),
       floatingActionButton: switch (_menuIndex) {
